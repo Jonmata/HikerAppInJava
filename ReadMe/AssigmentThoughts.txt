@@ -1,0 +1,54 @@
+Trail bag
+in my program I have my trails saved in a HashSet because we know the maximum amount of trails 
+that we can have so that the hashSet can give me fast search and insertion and removel of big O(1)
+
+UserBag
+in my User bag it is saved with a tree map to find the user by there user names 
+I chosen this structure because we can have unlimited amounts of users with a tree and have a decent search time of logN.
+
+User Class
+is your stander user class with the user name,password,phhoneNumber,
+LinkedList<Users> for following followers and reviews because we never know how many 
+follower and review the user is going to have and we don't need to search though this information to much so thats why we can use a linked list
+same reason for the hiking history which is in a LinkedList<History>. 
+
+Admin
+extends to user so they can be in the same bag and can use the app like a regular user but had access to two extra tabs in the main view
+that allows them to promote a regular user to admin and only the primary admin which is hard coded in to be the primary user can demote a admin but not himself
+has only one boolean to tell the differences because normal admins and the primary admin. 
+
+ActiveUser 
+just allows me to get the user that login in at any time throughout the program 
+
+BackgroundsForWebsites 
+holds the backgrounds for my app and i get them at the initial of the program
+to add all my backgrounds to the project 
+
+History
+just keeps track of all the trails that the user has walked and how much they walked and when they walked it
+
+Reviews
+holds the comment the rating the user name that wrote the comment and when it was writen
+
+Trails
+Holds the information about the trail like the address the name of it how hard it is
+the trails type and the elevation of the trail
+
+Enum classes 
+they just hold the difficulty level and the type of trails there are in the program 
+they have a method where they can get a string and then return the equivalent enums from the string given 
+
+Tools package and the Util class
+reads the picture that I grabbed from the internet and pasted them in the picture folder the util class reads then and 
+puts then in the backgroundforWebsite class for later use and then it checks if there is any data in the BackUpFile
+if there is nothing in there then it runs the hard coded dummies trails i coded in other wise it reads the file and restores
+the information that was saved when the program closed 
+
+how the search button works 
+it first checks if anything is there if the isn't then is sends a message to the user saying to enter something
+then is checks if the user input is a number if it is then it gets the number and lower in length and elevation and displays it to the table view
+if it is not a number then it checks if its one of the Enum classes if both of then return null then is checks the name and addresses
+and gets any strings that contain the character sequence that the user inputed and is plays them
+but if the enum classes return and enums then I look through the TrailsBag for the enum classes the matches and display them on the table view
+
+ 
